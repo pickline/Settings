@@ -1,0 +1,84 @@
+{
+    // editor settings:
+    "editor.fontSize": 16,
+    "editor.lineHeight": 24,
+    "editor.autoClosingBrackets": "beforeWhitespace",
+    "editor.autoClosingQuotes": "beforeWhitespace",
+    "editor.minimap.enabled": false,
+    "editor.scrollBeyondLastLine": false,
+    "editor.useTabStops": false,
+    "editor.scrollBeyondLastColumn": 0,
+    "editor.selectionHighlight": false,
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.snippetSuggestions": "none",
+    "editor.lineNumbers": "relative",
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": true
+    },
+    "files.autoSave": "onFocusChange",
+    "files.autoSaveDelay": 100,
+
+    // workbench settings:
+    "workbench.iconTheme": "material-icon-theme",
+
+    // explorer settings:
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+
+    // terminal settings:
+    "terminal.integrated.shell.osx": "/bin/zsh",
+    "terminal.integrated.fontSize": 16,
+    "terminal.integrated.fontFamily": "Meslo LG M for Powerline",
+
+    // plugins settings:
+    "git.autofetch": true, //control is auto fetch the origin branch
+    "vim.easymotion": true, // control whether the easymotion is open
+    "vim.leader": "<space>", // change leader key to <space>
+    "luacheck.luacheck": "/Users/liziqiang/.luarocks/bin/luacheck", // config luacheck path
+    "luacheck.globals": ["ss", "dbconf", "LDM", "MSM", "const", "class", "OK", "CHECK", "enum", "Log", "SM", "accept", "response", "exit", "table", "init", "math", "string", "hotfix", "class2"],
+    "luacheck.ignore":[" "],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            // s, w --> w, s
+            "before": ["<leader>", "s"],
+            "after": ["\"", "0", "d", "i", "w", "w", "\"", "1", "d", "i", "w", "\"", "0", "P", "F", ",", "\"", "1", "P"]
+        },
+        {
+            // s[w] --> [w]s
+            "before": ["<leader>", "b"],
+            "after": ["x", "h", "P"]
+        },
+        {
+            // [s]w --> w[s]
+            "before": ["<leader>", "e"],
+            "after": ["x", "p"]
+        },
+        {
+            // insead current words with words in registers
+            "before": ["<leader>", "c"],
+            "after": ["v", "i", "w", "p"]
+        }
+    ],
+    "vim.statusBarColorControl": true,
+    "vim.statusBarColors.normal": ["#8FBCBB", "#434C5E"],
+    "vim.statusBarColors.insert": "#BF616A",
+    "vim.statusBarColors.visual": "#B48EAD",
+    "vim.statusBarColors.visualline": "#B48EAD",
+    "vim.statusBarColors.visualblock": "#A3BE8C",
+    "vim.statusBarColors.replace": "#D08770",
+    "C_Cpp.updateChannel": "Insiders",
+    "git.enableSmartCommit": true,
+    "terminal.integrated.rendererType": "dom",
+    "window.zoomLevel": 0,
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#8FBCBB",
+        "statusBar.noFolderBackground": "#8FBCBB",
+        "statusBar.debuggingBackground": "#8FBCBB",
+        "statusBar.foreground": "#434C5E"
+    },
+    "extensions.ignoreRecommendations": true,
+    "editor.largeFileOptimizations": false,
+    "workbench.colorTheme": "Panda Syntax",
+}
