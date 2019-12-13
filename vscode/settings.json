@@ -19,6 +19,7 @@
     },
     "files.autoSave": "onFocusChange",
     "files.autoSaveDelay": 100,
+    "files.eol": "\n",
 
     // workbench settings:
     "workbench.iconTheme": "material-icon-theme",
