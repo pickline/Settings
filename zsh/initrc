@@ -1,0 +1,16 @@
+########## aliases start ###############
+
+alias vim="nvim"
+alias vi="nvim"
+alias pip="pip3"
+alias dkdl="export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890"
+alias pz="source ~/.zshrc"
+
+########## aliases end ###############
+
+
+########## env set start ###############
+
+export PATH=$PATH:/opt/homebrew/bin         # set for homebrew installed packages
+
+########## env set end ###############
