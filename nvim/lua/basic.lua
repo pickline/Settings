@@ -64,3 +64,9 @@ vim.o.updatetime                    = 300
 vim.wo.foldmethod                   = 'expr'
 vim.wo.foldexpr                     = 'nvim_treesitter#foldexpr()'
 vim.wo.foldlevel                    = 90
+
+vim.wo.signcolumn                   = "yes"
+
+vim.cmd[[ colorscheme nord ]]
+
+

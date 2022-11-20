@@ -40,6 +40,20 @@ require("packer").startup({function(use)
     }
 
     use {
+        'neovim/nvim-lspconfig',
+        opt = true,
+        event = 'BufReadPre',
+        wants = { "nvim-lsp-installer", "vim-illuminate"},
+        config = function()
+            require("lsp").setup()
+        end,
+        requires = {
+            "williamboman/nvim-lsp-installer",
+            "RRethy/vim-illuminate"
+        }
+    }
+
+    use {
         'nvim-treesitter/nvim-treesitter',
         run = function ()
             local ts_update = require("nvim-treesitter.install").update({with_sync = true})
@@ -48,23 +62,47 @@ require("packer").startup({function(use)
         config = function()
             local config = require("config.nvim-treesitter")
             require("nvim-treesitter.configs").setup(config)
+        end,
+        event = 'BufEnter',
+    }
+
+
+    use "glepnir/dashboard-nvim"
+
+    use {
+        "filipdutescu/renamer.nvim",
+        requires = { {'nvim-lua/plenary.nvim'} }
+    }
+
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+            'nvim-tree/nvim-web-devicons',
+        },
+        tag = 'nightly',
+        config = function()
+            require("nvim-tree").setup()
         end
     }
 
-    -- use {
-    --     'neovim/nvim-lspconfig',
-    --     opt = true,
-    --     event = 'BufReadPre',
-    --     wants = { "nvim-lsp-installer" },
-    --     config = function()
-    --         require("config.lsp").setup()
-    --     end,
-    --     requires = {
-    --         "williamboman/nvim-lsp-installer"
-    --     }
-    -- }
-    --
-    use "glepnir/dashboard-nvim"
+    use {
+        'folke/which-key.nvim',
+        config = function()
+            require("which-key").setup()
+        end
+    }
+
+    use {
+        'rcarriga/nvim-notify',
+        event = "BufEnter",
+        config = function()
+            vim.defer_fn(function()
+                require "config.notify"
+            end, 2000)
+        end
+    }
+
+    use 'shaunsingh/nord.nvim'
 
     if packer_bootstrap then
         require ('packer').sync()
