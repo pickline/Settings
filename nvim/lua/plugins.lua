@@ -14,7 +14,7 @@ local packer_bootstrap = ensure_packer()
 
 local packer_config = require("config.packer")
 
-require("packer").startup(function(use)
+require("packer").startup({function(use)
     use 'wbthomason/packer.nvim'
     use {
         'numToStr/Comment.nvim',
@@ -51,7 +51,22 @@ require("packer").startup(function(use)
         end
     }
 
+    -- use {
+    --     'neovim/nvim-lspconfig',
+    --     opt = true,
+    --     event = 'BufReadPre',
+    --     wants = { "nvim-lsp-installer" },
+    --     config = function()
+    --         require("config.lsp").setup()
+    --     end,
+    --     requires = {
+    --         "williamboman/nvim-lsp-installer"
+    --     }
+    -- }
+    --
+    use "glepnir/dashboard-nvim"
+
     if packer_bootstrap then
         require ('packer').sync()
     end
-end, packer_config)
+end, config = packer_config})
