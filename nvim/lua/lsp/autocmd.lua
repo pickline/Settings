@@ -1,6 +1,6 @@
 local M = {}
 
-function M.setup(client, bufnr)
+function M.setup(_, bufnr)
     vim.api.nvim_create_autocmd("CursorHold", {
         buffer = bufnr,
         callback = function()

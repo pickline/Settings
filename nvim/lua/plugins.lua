@@ -104,6 +104,26 @@ require("packer").startup({function(use)
 
     use 'shaunsingh/nord.nvim'
 
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = {'kyazdani42/nvim-web-devicons', opt = true},
+        config = function ()
+            local config = require("config.lualine")
+            require("lualine").setup(config)
+        end
+
+    }
+
+    use {
+        'akinsho/bufferline.nvim',
+        tag = 'v3.*',
+        requires = {'nvim-tree/nvim-web-devicons'},
+        config = function()
+            local config = require("config.bufferline")
+            require("bufferline").setup(config)
+        end
+    }
+
     if packer_bootstrap then
         require ('packer').sync()
     end
