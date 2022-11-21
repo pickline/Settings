@@ -5,6 +5,14 @@ local highlights = require("nord").bufferline.highlights({
 return {
     options = {
         separator_style = "slant",
+        offsets = {
+            {
+                filetype = "NvimTree",
+                text = "File Explorer",
+                separator = true,
+                style = "slant",
+            }
+        }
     },
     highlights = highlights,
 }
