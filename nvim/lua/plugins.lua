@@ -87,14 +87,13 @@ require("packer").startup({function(use)
             local config = require("config.nvim-treesitter")
             require("nvim-treesitter.configs").setup(config)
         end,
-        event = 'VimEnter',
+        event = 'BufEnter',
     }
 
 
     use {
         "glepnir/dashboard-nvim",
-        config = function()
-        end
+        -- config = [[require "config.dashboard"]]
     }
 
     use {
