@@ -1,22 +1,26 @@
 local whichkey = require("which-key")
 local Terminal = require("toggleterm.terminal").Terminal
 
-local lazygit = Terminal:new({ cmd = "lazygit", hidden = true, direction = 'float'})
-local htop = Terminal:new({ cmd = "htop", hidden = true, direction = 'float'})
+local common_opts = {
+    hiddent = true,
+    direction = 'float',
+    env = {
+        https_proxy = "http://127.0.0.1:7890",
+        http_proxy = "http://127.0.0.1:7890",
+        all_proxy = "socks5://127.0.0.1:7890",
+    },
+}
 
-function _lazygit_toggle()
-    lazygit:toggle()
-end
-
-function _htop_toggle()
-    htop:toggle()
+function _toggle_with_cmd(cmd)
+    local terminal = Terminal:new(table.merge({cmd = cmd}, common_opts))
+    terminal:toggle()
 end
 
 local M = {
     t = {
-        s = {":ToggleTerm<CR>", "open terminal"},
-        g = {"<cmd>lua _lazygit_toggle()<CR>", "open lazygit terminal"},
-        h = {"<cmd>lua _htop_toggle()<CR>", "open htop terminal"},
+        s = {"<cmd>lua _toggle_with_cmd()<CR>", "open terminal"},
+        g = {"<cmd>lua _toggle_with_cmd(\"lazygit\")<CR>", "open lazygit terminal"},
+        h = {"<cmd>lua _toggle_with_cmd(\"htop\")<CR>", "open htop terminal"},
     }
 }
 
