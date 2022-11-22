@@ -23,7 +23,6 @@ require("packer").startup({function(use)
         end
     }
     use 'nvim-lua/plenary.nvim'
-    use 'famiu/nvim-reload'
     use {
         'Pocco81/auto-save.nvim',
         config = function()
@@ -63,16 +62,11 @@ require("packer").startup({function(use)
             local config = require("config.nvim-treesitter")
             require("nvim-treesitter.configs").setup(config)
         end,
-        event = 'BufEnter',
+        event = 'VimEnter',
     }
 
 
     use "glepnir/dashboard-nvim"
-
-    use {
-        "filipdutescu/renamer.nvim",
-        requires = { {'nvim-lua/plenary.nvim'} }
-    }
 
     use {
         'nvim-tree/nvim-tree.lua',
@@ -88,7 +82,8 @@ require("packer").startup({function(use)
     use {
         'folke/which-key.nvim',
         config = function()
-            require("which-key").setup()
+            local config = require "config.which-key"
+            require("which-key").setup(config)
         end
     }
 
@@ -121,6 +116,14 @@ require("packer").startup({function(use)
         config = function()
             local config = require("config.bufferline")
             require("bufferline").setup(config)
+        end
+    }
+
+    use {
+        'akinsho/toggleterm.nvim',
+        config = function()
+            local config = require "config.toggleterm"
+            require("toggleterm").setup(config)
         end
     }
 

@@ -1,5 +1,5 @@
-local cmp = require("cmp")
-local lspkind = require("lspkind")
+local cmp = prequire("cmp")
+local lspkind = prequire("lspkind")
 
 return {
   snippet = {

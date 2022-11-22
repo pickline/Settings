@@ -11,7 +11,8 @@ return {
                 text = "File Explorer",
                 separator = true,
                 style = "slant",
-            }
+            },
+            diagnostics = "nvim_lsp",
         }
     },
     highlights = highlights,

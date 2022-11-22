@@ -68,7 +68,11 @@ vim.wo.foldmethod                   = 'expr'
 vim.wo.foldexpr                     = 'nvim_treesitter#foldexpr()'
 vim.wo.foldlevel                    = 90
 
+-- 显示状态栏,避免lsp导致的编辑区移动
 vim.wo.signcolumn                   = "yes"
+
+-- 禁用vim默认status
+vim.o.showmode                      = false
 
 vim.cmd[[ colorscheme nord ]]
 
