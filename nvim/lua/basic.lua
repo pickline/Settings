@@ -1,6 +1,7 @@
 -- leader
 vim.g.mapleader                     = ' '
 vim.g.maplocalleader                = ' '
+
 --set utf-8
 vim.g.encoding                      = 'utf-8'
 vim.o.fileencoding                  = 'utf-8'
@@ -47,7 +48,7 @@ vim.o.mouse                         = "a"
 vim.o.showtabline                   = 4
 
 -- 补全增强
-vim.o.wildmenu                      = true
+-- vim.o.wildmenu                      = true
 
 -- 不可见字符显示
 vim.o.list                          = true
@@ -58,7 +59,7 @@ vim.o.writebackup                   = false
 vim.o.swapfile                      = false
 
 -- 自动补全不自动选中
-vim.g.completeopt                   = "menu,menuone,noselect,noinsert"
+-- vim.g.completeopt                   = "menu,menuone,noselect,noinsert"
 
 -- 更小的更新时间
 vim.o.updatetime                    = 300
@@ -75,5 +76,3 @@ vim.wo.signcolumn                   = "yes"
 vim.o.showmode                      = false
 
 vim.cmd[[ colorscheme nord ]]
-
-

@@ -39,6 +39,31 @@ require("packer").startup({function(use)
     }
 
     use {
+        'ray-x/lsp_signature.nvim',
+        config = function()
+            local config = require("config.lsp_signature")
+            require("lsp_signature").setup()
+        end
+    }
+
+    use 'L3MON4D3/LuaSnip'
+
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-nvim-lua'
+    use 'hrsh7th/cmp-path'
+    use 'onsails/lspkind.nvim'
+
+    use {
+        'hrsh7th/nvim-cmp',
+        config = function()
+            local config = require("config.cmp")
+            require("cmp").setup(config)
+        end
+    }
+
+    use 'saadparwaiz1/cmp_luasnip'
+
+    use {
         'neovim/nvim-lspconfig',
         opt = true,
         event = 'BufReadPre',
@@ -66,7 +91,11 @@ require("packer").startup({function(use)
     }
 
 
-    use "glepnir/dashboard-nvim"
+    use {
+        "glepnir/dashboard-nvim",
+        config = function()
+        end
+    }
 
     use {
         'nvim-tree/nvim-tree.lua',
@@ -122,9 +151,18 @@ require("packer").startup({function(use)
     use {
         'akinsho/toggleterm.nvim',
         config = function()
-            local config = require "config.toggleterm"
-            require("toggleterm").setup(config)
+            -- local config = require "config.toggleterm"
+            require("toggleterm").setup()
         end
+    }
+
+    use {
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.x',
+        config = function()
+            require("telescope").setup()
+        end,
+        requires = { 'nvim-lua/plenary.nvim' }
     }
 
     if packer_bootstrap then

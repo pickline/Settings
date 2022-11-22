@@ -18,9 +18,10 @@ end
 
 local M = {
     t = {
-        s = {"<cmd>lua _toggle_with_cmd()<CR>", "open terminal"},
+        s = {"<cmd>lua _toggle_with_cmd()<CR>", "open normal terminal"},
         g = {"<cmd>lua _toggle_with_cmd(\"lazygit\")<CR>", "open lazygit terminal"},
         h = {"<cmd>lua _toggle_with_cmd(\"htop\")<CR>", "open htop terminal"},
+        d = {"<cmd>lua _toggle_with_cmd(\"ssh dev\")<CR>", "open dev terminal"},
     }
 }
 

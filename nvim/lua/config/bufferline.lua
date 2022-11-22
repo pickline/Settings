@@ -13,7 +13,7 @@ return {
                 style = "slant",
             },
             diagnostics = "nvim_lsp",
-        }
+        },
     },
     highlights = highlights,
 }

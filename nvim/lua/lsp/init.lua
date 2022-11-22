@@ -23,21 +23,26 @@ local function on_attach(client, bufnr)
 
     require("lsp.highlighting").setup(client, bufnr)
 
-    require("lsp.autocmd").setup(client, bufnr)
+    -- require("lsp.autocmd").setup(client, bufnr)
+
+    -- lsp plugins
+    require("lsp_signature").on_attach({}, bufnr)
 end
 
-
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 local opts = {
     on_attach = on_attach,
     flags = {
         debounce_text_changes = 150,
     },
+    capabilities = capabilities,
 }
 
 require("lsp.handlers").setup()
 
 function M.setup()
+    -- vim.cmd [[packadd lsp_signature.nvim]]
     require("lsp.installer").setup(servers, opts)
 end
 
