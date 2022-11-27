@@ -11,6 +11,9 @@ alias pz="source ~/.zshrc"
 
 ########## env set start ###############
 
-export PATH=$PATH:/opt/homebrew/bin         # set for homebrew installed packages
+SYSTEM=`uname -s`
+if [ $SYSTEM = 'Darwin' ] then
+    export PATH=$PATH:/opt/homebrew/bin         # set for homebrew installed packages
+fi
 
 ########## env set end ###############
