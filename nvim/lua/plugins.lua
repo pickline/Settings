@@ -51,6 +51,7 @@ require("packer").startup({function(use)
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-nvim-lua'
     use 'hrsh7th/cmp-path'
+    use 'hrsh7th/cmp-buffer'
     use 'onsails/lspkind.nvim'
 
     use {
@@ -69,12 +70,28 @@ require("packer").startup({function(use)
         event = 'BufReadPre',
         wants = { "nvim-lsp-installer", "vim-illuminate"},
         config = function()
+            require("config.lsp")
             require("lsp").setup()
         end,
         requires = {
             "williamboman/nvim-lsp-installer",
             "RRethy/vim-illuminate"
         }
+    }
+
+    use {
+        'folke/lsp-colors.nvim',
+        config = function()
+            require("lsp-colors").setup()
+        end
+    }
+
+    use {
+        'simrat39/symbols-outline.nvim',
+        config = function ()
+            require("symbols-outline").setup()
+        end
+
     }
 
     use {
@@ -90,6 +107,8 @@ require("packer").startup({function(use)
         event = 'BufEnter',
     }
 
+    use {"romgrk/nvim-treesitter-context",after = "nvim-treesitter"}
+	use {"nvim-treesitter/nvim-treesitter-textobjects",after = "nvim-treesitter"}
 
     use {
         "glepnir/dashboard-nvim",

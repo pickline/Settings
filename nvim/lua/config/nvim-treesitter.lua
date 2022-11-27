@@ -9,5 +9,16 @@ return {
         enable = true,
         -- additional_vim_regex_highlighting = false,
         disable = {'help'}
+    },
+    textobjects = {
+        swap = {
+            enable = true,
+            swap_next = {
+                ["<leader>e"] = "@parameter.inner",
+            },
+            swap_previous = {
+                ["<leader>q"] = "@parameter.inner",
+            },
+        }
     }
 }
