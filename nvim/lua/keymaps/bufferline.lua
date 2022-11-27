@@ -1,7 +1,4 @@
-local whichkey = require("which-key")
-
-
-local M = {
+return {
     b = {
         name = "bufferline",
         l = {":BufferLineCycleNext<CR>", "move to next buffer"},
@@ -10,5 +7,3 @@ local M = {
         t = {":BufferLinePick<CR>", "pick buffer"},
     }
 }
-
-whichkey.register(M, { prefix = "<leader>"})

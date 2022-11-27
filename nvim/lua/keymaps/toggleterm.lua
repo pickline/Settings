@@ -1,4 +1,3 @@
-local whichkey = require("which-key")
 local Terminal = require("toggleterm.terminal").Terminal
 
 local common_opts = {
@@ -16,7 +15,7 @@ function _toggle_with_cmd(cmd)
     terminal:toggle()
 end
 
-local M = {
+return {
     t = {
         s = {"<cmd>lua _toggle_with_cmd()<CR>", "open normal terminal"},
         g = {"<cmd>lua _toggle_with_cmd(\"lazygit\")<CR>", "open lazygit terminal"},
@@ -24,5 +23,3 @@ local M = {
         d = {"<cmd>lua _toggle_with_cmd(\"ssh dev\")<CR>", "open dev terminal"},
     }
 }
-
-whichkey.register(M, { prefix = "<leader>" })

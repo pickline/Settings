@@ -1,6 +1,4 @@
-local whichkey = require("which-key")
-
-local keymap_leader = {
+return {
     p = {
         name = "packer",
         s = { ":PackerSync<CR>", "sync packer plugins"},
@@ -8,6 +6,3 @@ local keymap_leader = {
         S = { ":PackerStatus<CR>", "show status of packer"},
     }
 }
-
-
-whichkey.register(keymap_leader, { prefix = "<leader>"})

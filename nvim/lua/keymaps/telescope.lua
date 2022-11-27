@@ -1,6 +1,4 @@
-local whichkey = require("which-key")
-
-local M = {
+return {
     t = {
         e = {
             name = "telescope",
@@ -11,5 +9,3 @@ local M = {
         }
     }
 }
-
-whichkey.register(M, { prefix = "<leader>"})

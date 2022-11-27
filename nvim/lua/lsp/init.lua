@@ -10,6 +10,7 @@ local servers = {
     pylsp = {},
     -- taplo = {},
     yamlls = {},
+    bashls = {},
 }
 
 local function on_attach(client, bufnr)

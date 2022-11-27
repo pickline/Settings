@@ -14,7 +14,7 @@ local function _copy(t)
     local result = {}
     
     for k, v in pairs(t) do
-        if type(v) == "table" and not copied[v] then
+        if type(v) == "table" then
             result[k] = _copy(v)
         else
             result[k] = v
@@ -42,4 +42,3 @@ local function _merge(dst, src)
     return result
 end
 table.merge = _merge
-
