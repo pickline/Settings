@@ -1,4 +1,5 @@
 local ensure_packer = function()
+
     local fn = vim.fn
     local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 
@@ -64,6 +65,8 @@ require("packer").startup({function(use)
 
     use 'saadparwaiz1/cmp_luasnip'
 
+    use 'williamboman/nvim-lsp-installer'
+
     use {
         'neovim/nvim-lspconfig',
         opt = true,
@@ -72,12 +75,17 @@ require("packer").startup({function(use)
         config = function()
             require("config.lsp")
             require("lsp").setup()
+            local config = require "config.lsp-installer"
+            require("nvim-lsp-installer").setup(config)
         end,
         requires = {
             "williamboman/nvim-lsp-installer",
             "RRethy/vim-illuminate"
         }
     }
+
+    use 'simrat39/rust-tools.nvim'
+    use 'mfussenegger/nvim-dap'
 
     use {
         'folke/lsp-colors.nvim',
@@ -141,7 +149,8 @@ require("packer").startup({function(use)
             vim.defer_fn(function()
                 require "config.notify"
             end, 2000)
-        end
+        end,
+	after="nord.nvim"
     }
 
     use 'shaunsingh/nord.nvim'
