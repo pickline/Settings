@@ -17,6 +17,7 @@ if [ 'Darwin' = $SYSTEM ]; then
     brew install ack
     brew install htop
     brew install procs
+    brew install atuin
 elif [ 'Linux' = $SYSTEM ]; then
     sudo apt install bat
     sudo apt install neovim
@@ -29,6 +30,7 @@ elif [ 'Linux' = $SYSTEM ]; then
     curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh
     source "$HOME/.cargo/env"
     cargo install procs
+    cargo install atuin
 
     # neovim
     sudo add-apt-repository ppa:neovim-ppa/stable
