@@ -18,6 +18,7 @@ if [ 'Darwin' = $SYSTEM ]; then
     brew install htop
     brew install procs
     brew install atuin
+    brew install termscp
 elif [ 'Linux' = $SYSTEM ]; then
     sudo apt install bat
     sudo apt install neovim
@@ -31,6 +32,7 @@ elif [ 'Linux' = $SYSTEM ]; then
     source "$HOME/.cargo/env"
     cargo install procs
     cargo install atuin
+    cargo install termscp
 
     # neovim
     sudo add-apt-repository ppa:neovim-ppa/stable
