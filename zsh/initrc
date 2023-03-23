@@ -1,13 +1,13 @@
 ########## aliases start ###############
 
-alias vim="nvim"
-alias vi="nvim"
 alias pip="pip3"
 alias dkdl="export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890"
+alias gbdl="unset https_proxy http_proxy all_proxy"
 alias pz="source ~/.initrc"
 alias cat="bat -n --tabs 4"
 alias ls='exa'
 alias ll='exa -l'
+alias lt='exa -T'
 alias du='dust'
 alias df='duf'
 alias ps='procs'
@@ -23,5 +23,11 @@ if [ $NAME = 'Darwin' ]; then
     export PATH=$PATH:/opt/homebrew/bin         # set for homebrew installed packages
 fi
 export BAT_THEME="OneHalfDark"
+
+#for Rustup speedup
+export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
+export RUSTUP_UPDATE_SERVER=https://mirrors.ustc.edu.cn/rust-static/rustup
+
+export PATH=$PATH:~/.local/bin
 
 ########## env set end ###############
