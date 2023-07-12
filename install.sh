@@ -1,12 +1,5 @@
 SYSTEM=`uname -a`
 
-if [ -d '~/.config/nvim' ] then
-    rm -rf ~/.config/nvim
-fi
-if [ -d '~/.vim' ] then
-    rm -rf ~/.vim 
-fi
-
 # some dependencies
 if [ 'Darwin' = $SYSTEM ]; then
     brew install neovim --HEAD
@@ -53,10 +46,3 @@ cp zsh/zshrc ~/.zshrc
 cp zsh/zimrc ~/.zimrc
 # install for zimfw
 zimfw install
-
-# install packer
-git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-
-# add custom configs
-cp ./nvim ~/.vim
-ln -s ~/.vim ~/.config/nvim
